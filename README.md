@@ -54,3 +54,87 @@ Penjelasan :
   - Dengan parameter, function dapat menerima sebuah inputan data dan menggunakannya untuk melakukan task/tugas.
   - Saat membuat function/fitur, kita harus tahu data-data yang dibutuhkan. Misalnya saat membuat function penambahan 2 buah nilai. Data yang dibutuhkan adalah 2 buah nilai tersebut.
   - Contoh Parameter Function
+    ```Javascript
+    function tambah(a, b){
+        return a + b
+    }
+    ```
+    Penjelasan :
+    > a, b adalah parameter
+- Argumen Function
+  - Argumen adalah nilai yang digunakan saat memanggil function.
+  - Jumlah argumen harus sama dengan jumlah parameternya
+  - Jadi jika di function penambahan ada 2 parameter nilai saat membuat function. Saat memanggil function kita gunakan 2 buah nilai argumen.
+  - Contoh Argumen Function
+    ```Javascript
+    function tambah(a, b){
+        return a + b
+    }
+    
+    console.log(tambah(10, 6)) //Output: 16
+    ```
+    penjelasan :
+    > 10, 6 adalah argumen sebagai nilai
+- Default Parameters
+  - Default paramaters digunakan untuk memberikan nilai awal/default pada parameter function.
+  - Default parameters bisa digunakan jika kita ingin menjaga function agar tidak error saat dipanggil tanpa argumen.
+  - Contoh Default Parameter
+    ```Javascript
+    function sapa(nama = 'orang'){
+        return 'Halo' + nama
+    }
+    
+    console.log(sapa('Yohanes'))
+    console.log(sapa())
+    ```
+- Function Helper
+  - Kita bisa menggunakan function yang sudah dibuat pada function lain.
+  - Contoh Function Helper
+    ```Javascript
+    function tambah(nomor){
+        return nomor * 10
+    }
+    function bagi(number){
+        return tambah(number) / 2
+    }
+    
+    bagi(10) //Returns 50
+- Arrow Function
+  - Arrow function adalah cara lain menuliskan function. Ini adalah fitur terbaru yang ada pada ES6 (Javascript Version)
+  - Contoh Arrow Function
+    ```Javascript
+    const sapa = () => {
+        return 'Hello World'
+    }
+    
+    const tambah = (a, b) = {
+    return a + b
+    }
+    ```
+- Short Syntax Function
+  - Nol Parameter
+    ```Javascript
+    const functionName = () => {}
+    ```
+  - Satu Parameter
+    ```Javascript
+    const functionName = paramOne = {}
+    ```
+  - Dua atau lebih Parameter
+    ```Javascript
+    const functionName = (paramOne, paramTwo) => {}
+    ```
+  - Single Line Block
+    ```Javascript
+    const sumNumber = number => number +number
+    ```
+  - Multi-Line Block
+    ```Javascript
+    const sumNumber = number => {
+        const sum = number + number;
+        return sum;
+    }
+    ```
+    <br>
+## Errors dan Debugging<br>
+###
