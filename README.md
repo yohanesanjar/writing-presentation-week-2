@@ -137,4 +137,33 @@ Penjelasan :
     ```
     <br>
 ## Errors dan Debugging<br>
-###
+### Error
+- Error objek dilempar ketika kesalahan runtime terjadi. Objek Errorjuga dapat digunakan sebagai objek dasar untuk pengecualian yang ditentukan pengguna.
+- Kesalahan runtime menghasilkan Errorobjek baru yang dibuat dan dibuang.
+- Tipe - Tipe Error
+  - EvalError
+    <br>Membuat instance yang mewakili kesalahan yang terjadi terkait fungsi global eval().
+  - RangeError
+    <br>Membuat instance yang mewakili kesalahan yang terjadi saat variabel numerik atau parameter berada di luar rentang validnya.
+  - ReferenceError
+    <br>Membuat instance yang mewakili kesalahan yang terjadi saat mereferensikan referensi yang tidak valid.
+  - SyntaxError
+    <br>Membuat instance yang mewakili kesalahan sintaks.
+  - TypeError
+    <br>Membuat instance yang mewakili kesalahan yang terjadi saat variabel atau parameter bukan tipe yang valid.
+  - URIError
+    <br>Membuat instance yang mewakili kesalahan yang terjadi saat encodeURI()atau decodeURI()melewati parameter yang tidak valid.
+  - AggregateError
+    <br>Membuat instance yang mewakili beberapa kesalahan yang dibungkus dalam satu kesalahan ketika beberapa kesalahan perlu dilaporkan oleh suatu operasi, misalnya oleh Promise.any().
+  - InternalError
+    <br>embuat instance yang mewakili kesalahan yang terjadi saat kesalahan internal di mesin JavaScript dilemparkan. Misalnya "terlalu banyak rekursi".
+- Constructor
+  <br> Membuat Error objek baru.
+- Metode Statis
+  - Error.captureStackTrace()
+  - Error.stackTraceLimit
+  - Error.prepareStackTrace()
+- Instance Properties
+  - Error.prototype.message
+  - Error.prototype.name
+  - Error.prototype.cause
