@@ -167,3 +167,31 @@ Penjelasan :
   - Error.prototype.message
   - Error.prototype.name
   - Error.prototype.cause
+### Debugging
+- Cara Debugging Javascript
+  - Cara termudah dan mungkin yang paling umum adalah dengan console.log() variabel yang ingin Anda periksa
+  - Menggunakan alat pengembang chrome, buka halaman Anda dengan kode JS Anda (tekan cmd+o di macOS atau Ctrl+o di Windows) dan pilih file Anda untuk di-debug, klik baris yang ingin Anda debug dan segarkan kembali halaman Anda (F5).
+- Call Stack
+  - Jalur yang telah diambil program Anda untuk mencapai titik saat Anda menetapkan titik putus atau Anda mengalami kesalahan.
+  - Contoh Call Stack
+    (function testing(){
+        var obj = {
+        add
+    }
+    function add(a, b) {
+        var result = a + b
+        return result.split('')
+    }
+    var stringResult = obj.add("1", "2") // stringResult becomes "12"
+    var numberResult = obj.add(1, 2) // numberResult is never set, an error is thrown
+    })()
+    ```
+    Penjelasan :
+    - testing dipanggil secara otomatis karena ini adalah IIFE (immediately Invoked Function Expression);
+    - variabel obj dideklarasikan dengan function add (menggunakan ES6 shorthand untuk fungsi dalam objek, itu akan sama dengan memiliki var obj = { add: add };
+    - function add dipanggil dari variabel obj dengan dua string memiliki parameter, ada yang ditambahkan yang menjadikannya "12" dalam skenario ini dan kemudian split dipanggil sebelum mengembalikan ["1", "2"];
+    - function add dipanggil lagi, kali ini dengan angka, nilai ditambahkan sehingga menjadi 3 tetapi kemudian, split (yang tidak tersedia untuk variabel tipe angka ) dipanggil yang membuat error dilemparkan;
+- Alat untuk menghindari runtime errors
+  - quokka untuk mengevaluasi kode pada saat mengetik
+  - eslint untuk memastikan panduan gaya konsisten dan itu akan membawa satu atau dua kesalahan di sepanjang mengoding
+  - Bagi Anda yang ingin menjadikan JS pengalaman mengetik yang lebih kuat, Anda dapat melihat hal-hal seperti TypeScript (seperti yang saya katakan di artikel sebelumnya, ketika belajar saya lebih suka menghindari perpustakaan yang mengabstraksi bahasa inti jadi saya tidak akan merekomendasikan yang terakhir ini ketika mulai).
