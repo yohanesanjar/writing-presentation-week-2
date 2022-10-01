@@ -194,4 +194,202 @@ Penjelasan :
 - Alat untuk menghindari runtime errors
   - quokka untuk mengevaluasi kode pada saat mengetik
   - eslint untuk memastikan panduan gaya konsisten dan itu akan membawa satu atau dua kesalahan di sepanjang mengoding
-  - Bagi Anda yang ingin menjadikan JS pengalaman mengetik yang lebih kuat, Anda dapat melihat hal-hal seperti TypeScript (seperti yang saya katakan di artikel sebelumnya, ketika belajar saya lebih suka menghindari perpustakaan yang mengabstraksi bahasa inti jadi saya tidak akan merekomendasikan yang terakhir ini ketika mulai).
+  - Bagi Anda yang ingin menjadikan JS pengalaman mengetik yang lebih kuat, Anda dapat melihat hal-hal seperti TypeScript (seperti yang saya katakan di artikel sebelumnya, ketika belajar saya lebih suka menghindari perpustakaan yang mengabstraksi bahasa inti jadi saya tidak akan merekomendasikan yang terakhir ini ketika mulai).<br>
+## Javascript Dasar - Data Type Built in Prototype and Method<br>
+### Data Type
+Data Primitive
+1. String 
+   - Deretan karakter yang diapit oleh sepasang tanda kutip (" "), berguna untuk menyimpan data yang dapat direpresentasikan dalam bentuk teks
+   - Properties
+
+     1. Constructor
+        <br>Mengembalikan fungsi yang dibuat string prototipe objek
+     2. Length
+        <br>Mengembalikan panjang string JavaScript
+        ```
+        const str = 'skilvul';
+        console.log(str.length); // Output: 7
+        ```
+     3. Prototype
+        <br>Menambah metode dan properti ke dalam sebuah objek
+        ```
+        String.prototype.reverse = function(){ 
+          let s = " "    
+          for (let i = String(this).length-1; i >= 0; i-- { 
+            s = s + String(this)[i]
+          } 
+          return s 
+        }
+        console.log("hallo".reverse()) //Output: 'ollah'
+        ```
+   - Method
+     1. charAt()
+        <br>Mengembalikan karakter pada index yang spesifik (posisi)
+        ```
+        let hewan = 'Dinosaurus';
+        console.log(hewan.charAt(4)); //Output : s
+        ```
+     2. indexOf()
+        <br>Kembalikan posisi kemunculan pertama yang ditemukan dari teks yang ditentukan dalam sebuah string
+        ```
+        const str = 'saya sedang belajar javascript';
+        console.log(str.indexOf('a')); // 1 :: s(a)ya ... 
+        console.log(str.indexOf('ja')); // 16 :: ... bela(ja)r javascript
+        ```
+     3. lastIndexOf()
+        <br>Kembalikan posisi kemunculan terakhir yang ditemukan dari teks yang ditentukan dalam sebuah string
+        ```
+        const str = 'saya sedang belajar javascript';
+        console.log(str.lastIndexOf('a')); // 23 :: ... belajar jav(a)script
+        console.log(str.lastIndexOf('ja')); // 20 :: ... belajar (ja)vascript
+        console.log(str.lastIndexOf('ja', 19)); // 16 :: ... bela(ja)r javascript
+        ```
+     4. replace()
+        <br>Cari string untuk nilai dan kembalikan string baru dengan nilai yang diganti
+        ```
+        const str = 'aku sedang belajar javascript';
+        console.log(str.replace('aku', 'saya')); // saya sedang belajar javascript
+        ```
+     5. slice()
+         <br>Ekstrak bagian dari string dan kembalikan string baru
+         <br>Sintaks : slice(indeksAwal, indeksAkhir);
+         ```
+         const str = 'saya sedang belajar javascript';
+         console.log(str.slice(5, 11)); // sedang
+         console.log(str.slice(5)); // sedang belajar javascript
+         ```
+     6. split()
+         <br>Memisahkan string ke dalam array substring
+         <br>Sintaks : split(separator, limit);
+         ```
+         const str = 'saya sedang belajar javascript';
+         console.log(str.split()); // ["saya sedang belajar javascript"]
+         console.log(str.split(' ')); // ["saya", "sedang", "belajar", "javascript"]
+         console.log(str.split(' ', 2)); //  ["saya", "sedang"]
+         ```
+     7. substring()
+         <br>Ekstrak bagian dari string antara dua posisi yang ditentukan
+         ```
+         const str = 'saya sedang belajar javascript';
+         console.log(str.substring(1, 3)); // ay
+         console.log(str.substring(5)); // sedang belajar javascript
+         ```
+     8. toLowerCase()
+         <br>Ubah string menjadi huruf kecil
+         ```
+         const str = 'Skilvul';
+         console.log(str.toLowerCase()); //Output: skilvul
+         ```
+     9. toUpperCase()
+         <br>Ubah string menjadi huruf besar
+         ```
+         const str = 'skilvul';
+         console.log(str.toUpperCase()); //Output: SKILVUL
+         ```
+     10. trim()
+         <br>Hapus spasi dari kedua ujung string
+         ```
+         const str = '     skilvul      ';
+         console.log(str.trim()); // 'skilvul'
+         ```
+     11. includes()
+         <br>mengembalikan nilai true or false apalah dalam variabel ada string tersebut
+         ```
+         let hewan = "Dinosaurus"
+         console.log(hewan.includes("saur"); // Output : true
+         ```     
+2. number
+   > Bilangan bulat, pecahan, dan lain-lain yang berbentuk angka
+     ```
+     const a = 19;
+     console.log(a); // 19
+     console.log(typeof a); // number
+     console.log(a instanceof Number); // false    
+     ```
+     - Properties (jarang digunakan, kebanyakan menggunakan methods number)
+     - Methods
+        1. isNan() --> NaN (Not a Number)
+        <br>Mengecek apakah ini bukan angka. Mengembalikan nilai Boolean, true jika nilai yang diuji NaN(bukan angka), false jika angka
+        ```
+        isNan("hallo") //true
+        isNan(12345) //false, karena ini angka
+        isNan(true) //false, karena boolean true dianggap sebagai 1, dan 1 itu termasuk angka
+        isNan("12345") //false, karena ada angka didalam string
+        ```
+        2. toString()
+        <br>Untuk mengubah angka menjadi string
+        ```
+        let angka = 25
+        angka.toString() //Output: '25'
+        ```
+        3. toFixed()
+        <br>Dapat menentukan jumlah angka dibelakang tanda koma. Return nilainya berupa string
+        ```
+        let pi = 3.14159265
+        pi.toFixed() //Output: '3'
+        pi.toFixed(1) //Output: '3.1'
+        pi.toFixed(4) //Output: '3.1415'
+        ```
+        4. parseInt() dan Number()
+        <br>Mengubah string menjadi number
+        ```
+        myString = "27";
+        console.log(parseInt(myString)); // Output: 27
+        console.log(Number(myString)); //Output: 27
+        ```
+ - Data Non-Primitive
+  1. Object
+  <br> contoh:
+     ```
+     let a = [10]
+     let b = a
+     console.log(a === b) // true
+     a.push(10)
+     console.log(a) // [10, 10]
+     console.log(a === b) // true
+     ```
+  2. Array
+  3. Function
+### Math
+<br> mempermudah dalam perhitungan matematika
+<br> contoh :
+```
+Math.pi //Output: 3.1415
+Math.LOG2E //Output: 1.4426
+Math.sqrt2 //Output: 1.4426 {menghitung akar dua}
+```
+   - Methods Math
+   1. Math.abs()
+      <br> mengembalikan nilai negatif menjadi nilai positif
+      ```
+      Math.abs(-13) //Output: 13     
+      ```
+   2. Math.pow()
+      <br> menghitung pangkat
+      ```
+      Math.pow(3, 2) //Output: 9
+      ```
+   3. Math.sqrt()
+      <br> menghitung akar
+      ```
+      Math.sqrt(9) //Output: 3
+      ```
+   4. Math.round()
+      <br> membulatkan angka
+      ```
+      Math.round(123.456) //Output: 123
+      ```
+   5. Math.floor()
+      <br> membulatkan angka kebawah
+      ```
+      Math.floor(4.4) //Output: 4
+      Math.floor(4.9) //Output: 4
+      ```
+   6. Math.ceil()
+      <br> membulatkan angka keatas
+      ```
+      Math.ceil(5.6) //Output: 6
+      Math.ceil(5.1) //Output: 6
+      ```
+   7. Math.random()
+      <br> menampilkan angka acak
