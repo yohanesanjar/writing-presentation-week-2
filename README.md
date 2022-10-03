@@ -1,3 +1,4 @@
+# Yohanes Anjar Dewantara (FEBE 15)
 # writing-presentation-week-2
 
 ## Javascript - Scope<br>
